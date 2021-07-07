@@ -1,0 +1,22 @@
+{
+  "name": "wortschatz",
+  "version": "1.0.0",
+  "description": "SS2021 Semesterprojekt von Victoria Bremer, Annekathrin Kolb, Kevin Liu und Isabel Pfalzgraf",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/machigattan/Wortschatz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/machigattan/Wortschatz/issues"
+  },
+  "homepage": "https://github.com/machigattan/Wortschatz#readme",
+  "dependencies": {
+    "node-red-node-mysql": "^0.2.1"
+  }
+}
