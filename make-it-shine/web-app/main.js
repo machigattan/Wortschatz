@@ -40,7 +40,16 @@ let emitEvent = function( event ) {
     g: button_green_state,
     b: button_blue_state,
   } );
+
+
+
 };
+
+  $('form').submit(function(){
+    connection.emit('new input', $('#newword').val());
+    $('#newword').val('');
+    return false;
+  });
 
 // add event listeners on button
 button_red.addEventListener( 'click', emitEvent );

@@ -38,4 +38,17 @@ io.on( 'connection', ( client ) => {
     toggle( data.r, data.g, data.b ); // toggle LEDs
   } );
 
+//see if client disconnects
+client.on( 'disconnect', () => {
+console.log('A client disconnected')});
+
+
+//input field stuff
+client.on('new input', (msg)=> { //here is the listener to the event
+    console.log('new word: ' + msg);
+  });
+
+
 } );
+
+
