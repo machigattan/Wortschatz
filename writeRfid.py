@@ -5,11 +5,12 @@ from mfrc522 import SimpleMFRC522
 # from __main__ import *
 
 reader = SimpleMFRC522()
-GPIO.setwarnings(False)
+
 # https://pimylifeup.com/raspberry-pi-rfid-rc522/ simple script from pimylifeup that can write on tags
 
 def write_function():
     # print(lines)
+    GPIO.setwarnings(False)
     text = input('New data:')
     print("waiting for tag")
     reader.write(text)
@@ -19,7 +20,7 @@ def write_function():
     print(text, "is the new word")
     GPIO.cleanup()
 
-write_function()
+# write_function()
 # try:
 #     print(lines)
 #     text = lines
