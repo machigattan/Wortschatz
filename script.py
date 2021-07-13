@@ -16,7 +16,7 @@ def main():
     lines = read_in()
 
     #return the sum to the output stream
-    # print (lines)
+    print (lines)
     
     # print("waiting for tag")
     reader.write(lines)
