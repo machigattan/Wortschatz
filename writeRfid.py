@@ -26,7 +26,7 @@ try:
     reader.write(text)
   
     id, text = reader.read() 
-     print("Written on ", id)
+    print("Written on ", id)
     print(text, "is the new word")
 
 finally:
