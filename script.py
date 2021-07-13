@@ -18,7 +18,7 @@ def main():
     #     total_sum_inArray += item
 
     #return the sum to the output stream
-    print (lines)
+    print (json.loads(lines))
 
 # Start process
 if __name__ == '__main__':
