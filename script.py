@@ -16,4 +16,4 @@ def main():
 # Start process
 if __name__ == '__main__':
     main()
-    # writeRfid.write_function()
+    writeRfid.write_function()
