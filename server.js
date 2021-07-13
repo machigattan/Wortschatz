@@ -60,11 +60,12 @@ console.log('A client disconnected')});
 //input Feld, listener für das event
 client.on('new input', (msg)=> { 
     // console.log('new word: ' + msg);
-    let pyshell = new PythonShell('writeRfid.py');
-    pyshell.send(JSON.stringify(msg));
- pyshell.run('writeRfid.py',"" ,()=>{
-   console.log ('finished');
- } )
+    // let pyshell = new PythonShell('writeRfid.py');
+   // pyshell.send(JSON.stringify(msg));
+   PythonShell.run('writeRfid.py', null, function (err) {
+    if (err) throw err;
+    console.log('finished');
+  });
 
 
   //   pyshell.on('message', function (message) {
