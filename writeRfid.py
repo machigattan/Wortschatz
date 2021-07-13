@@ -8,12 +8,20 @@ reader = SimpleMFRC522()
 def read_in():
     lines = sys.stdin.readlines()
 
-       return json.loads(lines)
+       return json.loads(lines[0])
+
+def main():
+    #get our data as an array from read_in()
+    lines = read_in()
+
+    #return the sum to the output stream
+    print (lines)
+
 
 # https://pimylifeup.com/raspberry-pi-rfid-rc522/ simple script from pimylifeup that can write on tags
 
 try:
-    text = input('New word:')
+    text = lines
     print("waiting for tag")
     reader.write(text)
   
@@ -24,3 +32,6 @@ try:
 finally:
     GPIO.cleanup()
 
+# Start process
+if __name__ == '__main__':
+    main()
