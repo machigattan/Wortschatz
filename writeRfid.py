@@ -2,7 +2,7 @@
 # from mfrc522 import SimpleMFRC522
 from __main__ import *
 
-reader = SimpleMFRC522()
+# reader = SimpleMFRC522()
 
 # https://pimylifeup.com/raspberry-pi-rfid-rc522/ simple script from pimylifeup that can write on tags
 
