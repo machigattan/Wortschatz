@@ -13,19 +13,7 @@ let pyshell = new PythonShell('script.py');
 
 // pyshell.send(JSON.stringify('brianfart'));
 
-pyshell.on('message', function (message) {
-    // received a message sent from the Python script (a simple "print" statement)
-    console.log(message);
-});
 
-//end the input stream and allow the process to exit
-pyshell.end(function (err) {
-    if (err){
-        throw err;
-    };
-
-    console.log('finished');
-});
 
 // LED API wird importiert
 const { toggle } = require( './led-control' );
@@ -74,10 +62,29 @@ client.on('new input', (msg)=> {
     console.log('new word: ' + msg);
 
     pyshell.send(JSON.stringify(msg));
-  //   pyshell.on('message', function (message) {
-  //     // received a message sent from the Python script (a simple "print" statement)
-  //     console.log(message);
-  // });
+ 
+
+    
+    pyshell.on('message', function (message) {
+      // received a message sent from the Python script (a simple "print" statement)
+      console.log(message);
+  });
+  
+  //end the input stream and allow the process to exit
+  pyshell.end(function (err) {
+      if (err){
+          throw err;
+      };
+  
+      console.log('finished');
+  });
+
+
+
+
+
+
+
   });
 
 
