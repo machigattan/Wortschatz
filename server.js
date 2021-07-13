@@ -59,7 +59,7 @@ console.log('A client disconnected')});
 
 //input Feld, listener für das event
 client.on('new input', (msg)=> { 
-    // console.log('new word: ' + msg);
+    console.log('new word: ' + msg);
     let pyshell = new PythonShell('script.py');
     pyshell.send(JSON.stringify(msg));
  
