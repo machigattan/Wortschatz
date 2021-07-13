@@ -50,9 +50,7 @@ client.on('new input', (msg)=> {
     console.log('new word: ' + msg);
 
     var spawn = require("child_process").spawn;
-    var process = spawn('python',["hello.py",
-    req.query.firstname,
-    req.query.lastname] );
+    var process = spawn('python',["hello.py");
 
 
       // Takes stdout data from script which executed
