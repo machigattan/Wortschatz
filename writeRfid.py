@@ -1,5 +1,5 @@
-import RPi.GPIO as GPIO
-from mfrc522 import SimpleMFRC522
+# import RPi.GPIO as GPIO
+# from mfrc522 import SimpleMFRC522
 from __main__ import *
 
 reader = SimpleMFRC522()
@@ -17,8 +17,8 @@ def write_function():
     # print(text, "is the new word")
     # GPIO.cleanup()
 
-if __name__ == '__main__':
-    write_function()
+# if __name__ == '__main__':
+#     write_function()
 
 # try:
 #     print(lines)
