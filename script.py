@@ -1,5 +1,5 @@
 import sys, json
-
+import writeRfid
 #Read data from stdin
 def read_in():
     lines = sys.stdin.readlines()
