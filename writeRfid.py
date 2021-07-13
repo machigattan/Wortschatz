@@ -8,7 +8,7 @@ reader = SimpleMFRC522()
 def read_in():
     lines = sys.stdin.readlines()
 
-       return json.loads(lines[0])
+    return json.loads(lines[0])
 
 def main():
     #get our data as an array from read_in()
