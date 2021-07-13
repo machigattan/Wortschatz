@@ -7,7 +7,7 @@ reader = SimpleMFRC522()
 # https://pimylifeup.com/raspberry-pi-rfid-rc522/ simple script from pimylifeup that can write on tags
 
 def write_function():
-    print(lines)
+    # print(lines)
     text = input('New data:')
     print("waiting for tag")
     reader.write(text)
@@ -17,9 +17,7 @@ def write_function():
     print(text, "is the new word")
     # GPIO.cleanup()
 
-# if __name__ == '__main__':
-# write_function()
-
+write_function()
 # try:
 #     print(lines)
 #     text = lines
@@ -30,6 +28,6 @@ def write_function():
 #      print("Written on ", id)
 #     print(text, "is the new word")
 
-# finally:
-#     GPIO.cleanup()
+finally:
+    GPIO.cleanup()
 
