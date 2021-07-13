@@ -11,7 +11,7 @@ const { PythonShell } =require('python-shell');
 let pyshell = new PythonShell('script.py');
 // let pyshell = new PythonShell('writeRfid.py');
 
-pyshell.send(JSON.stringify([1,2,3,4,5]));
+pyshell.send(JSON.stringify('brianfart'));
 
 pyshell.on('message', function (message) {
     // received a message sent from the Python script (a simple "print" statement)
