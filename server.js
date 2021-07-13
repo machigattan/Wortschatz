@@ -18,19 +18,6 @@ app.get( '/', ( request, response ) => {
       'Content-Type': 'text/html',
     }
   } );
-
-
-
-// spawn new child process to call the python script
-  const writeScript = spawn('writeScript', ['writeRfid.py']);
-// collect data from script
-writeScript.stdout.on('data',  (data)=>  {
-  console.log('Pipe data from python script ...');
-
- });
-
-
-
 } );
 
 // bli bla blub, assets werden gesendet
@@ -61,6 +48,19 @@ console.log('A client disconnected')});
 //input Feld, listener für das event
 client.on('new input', (msg)=> { 
     console.log('new word: ' + msg);
+
+    var spawn = require("child_process").spawn;
+    var process = spawn('python',["hello.py",
+    req.query.firstname,
+    req.query.lastname] );
+
+
+      // Takes stdout data from script which executed
+    // with arguments and send this data to res object
+    process.stdout.on('data', function(data) {
+      res.send(data.toString());
+  } )
+
   });
 
 
