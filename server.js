@@ -1,6 +1,8 @@
 const path = require( 'path' );
 const express = require( 'express' );
 const socketIO = require( 'socket.io' );
+const { spawn } = require ( 'child_process' );
+
 
 // LED API wird importiert
 const { toggle } = require( './led-control' );
@@ -16,6 +18,19 @@ app.get( '/', ( request, response ) => {
       'Content-Type': 'text/html',
     }
   } );
+
+
+
+// spawn new child process to call the python script
+  const writeScript = spawn('writeScript', ['writeRfid.py']);
+// collect data from script
+writeScript.stdout.on('data',  (data)=>  {
+  console.log('Pipe data from python script ...');
+
+ });
+
+
+
 } );
 
 // bli bla blub, assets werden gesendet

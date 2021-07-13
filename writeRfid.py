@@ -9,8 +9,9 @@ try:
     text = input('New word:')
     print("waiting for tag")
     reader.write(text)
-    print("Written on", id)
-    id, text = reader.read()
+  
+    id, text = reader.read() 
+     print("Written on ", id)
     print(text, "is the new word")
 
 finally:
