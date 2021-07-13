@@ -18,6 +18,15 @@ app.get( '/', ( request, response ) => {
       'Content-Type': 'text/html',
     }
   } );
+  var spawn = require("child_process").spawn;
+  var process = spawn('python',["hello.py"]);
+
+
+    // Takes stdout data from script which executed
+  // with arguments and send this data to res object
+  process.stdout.on('data', function(data) {
+    res.send(data.toString());
+} )
 } );
 
 // bli bla blub, assets werden gesendet
@@ -49,15 +58,7 @@ console.log('A client disconnected')});
 client.on('new input', (msg)=> { 
     console.log('new word: ' + msg);
 
-    var spawn = require("child_process").spawn;
-    var process = spawn('python',["hello.py"]);
 
-
-      // Takes stdout data from script which executed
-    // with arguments and send this data to res object
-    process.stdout.on('data', function(data) {
-      res.send(data.toString());
-  } )
 
   });
 
