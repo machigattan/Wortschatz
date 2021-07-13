@@ -10,7 +10,21 @@ const { PythonShell } =require('python-shell');
 // let PythonShell = require('python-shell');
 let pyshell = new PythonShell('script.py');
 
+pyshell.send(JSON.stringify([1,2,3,4,5]));
 
+pyshell.on('message', function (message) {
+    // received a message sent from the Python script (a simple "print" statement)
+    console.log(message);
+});
+
+// end the input stream and allow the process to exit
+pyshell.end(function (err) {
+    if (err){
+        throw err;
+    };
+
+    console.log('finished');
+});
 
 // LED API wird importiert
 const { toggle } = require( './led-control' );
@@ -58,21 +72,7 @@ console.log('A client disconnected')});
 client.on('new input', (msg)=> { 
     console.log('new word: ' + msg);
 
-    pyshell.send(JSON.stringify([1,2,3,4,5]));
 
-    pyshell.on('message', function (message) {
-        // received a message sent from the Python script (a simple "print" statement)
-        console.log(message);
-    });
-    
-    // end the input stream and allow the process to exit
-    pyshell.end(function (err) {
-        if (err){
-            throw err;
-        };
-    
-        console.log('finished');
-    });
 
   });
 
