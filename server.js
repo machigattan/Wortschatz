@@ -75,7 +75,8 @@ client.on('new input', (msg)=> {
       if (err){
           throw err;
       };
-  
+  // let pyshell2 = new PythonShell('writeRfid.py');
+  // pyshell.
       console.log('finished');
   });
 
