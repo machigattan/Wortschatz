@@ -4,6 +4,14 @@ const socketIO = require( 'socket.io' );
 const { spawn } = require ( 'child_process' );
 
 
+//Import PythonShell module.
+// const {PythonShell} =require('python-shell');
+
+var PythonShell = require('python-shell');
+var pyshell = new PythonShell('script.py');
+
+
+
 // LED API wird importiert
 const { toggle } = require( './led-control' );
 
@@ -18,15 +26,7 @@ app.get( '/', ( request, response ) => {
       'Content-Type': 'text/html',
     }
   } );
-  var spawn = require("child_process").spawn;
-  var process = spawn('python',["hello.py"]);
 
-
-    // Takes stdout data from script which executed
-  // with arguments and send this data to res object
-  process.stdout.on('data', function(data) {
-    response.send(data.toString());
-} )
 } );
 
 // bli bla blub, assets werden gesendet
@@ -58,7 +58,21 @@ console.log('A client disconnected')});
 client.on('new input', (msg)=> { 
     console.log('new word: ' + msg);
 
+    pyshell.send(JSON.stringify([1,2,3,4,5]));
 
+    pyshell.on('message', function (message) {
+        // received a message sent from the Python script (a simple "print" statement)
+        console.log(message);
+    });
+    
+    // end the input stream and allow the process to exit
+    pyshell.end(function (err) {
+        if (err){
+            throw err;
+        };
+    
+        console.log('finished');
+    });
 
   });
 
