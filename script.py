@@ -24,7 +24,7 @@ def main():
     id, text = reader.read() 
     print("Written on ", id)
     print(lines, "is the new word")
-    # GPIO.cleanup()
+    GPIO.cleanup()
 
 # def write_function():
 #     print(lines)
