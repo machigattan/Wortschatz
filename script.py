@@ -3,6 +3,8 @@ import sys, json
 import RPi.GPIO as GPIO
 from mfrc522 import SimpleMFRC522
 
+reader = SimpleMFRC522()
+
 #Read data from stdin
 def read_in():
     lines = sys.stdin.readlines()
