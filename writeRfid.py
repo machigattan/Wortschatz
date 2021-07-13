@@ -17,7 +17,9 @@ def write_function():
     print(text, "is the new word")
     # GPIO.cleanup()
 
-write_function()
+if __name__ == '__main__':
+    write_function()
+
 # try:
 #     print(lines)
 #     text = lines
