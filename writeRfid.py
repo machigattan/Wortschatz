@@ -19,7 +19,7 @@ def write_function():
     print(text, "is the new word")
     GPIO.cleanup()
 
-# write_function()
+write_function()
 # try:
 #     print(lines)
 #     text = lines
