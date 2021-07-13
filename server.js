@@ -1,13 +1,13 @@
 const path = require( 'path' );
 const express = require( 'express' );
 const socketIO = require( 'socket.io' );
-const { spawn } = require ( 'child_process' );
+//const { spawn } = require ( 'child_process' );
 
 
 //Import PythonShell module.
-// const {PythonShell} =require('python-shell');
+const { PythonShell } =require('python-shell');
 
-let PythonShell = require('python-shell');
+// let PythonShell = require('python-shell');
 let pyshell = new PythonShell('script.py');
 
 
