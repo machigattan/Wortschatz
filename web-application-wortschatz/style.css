@@ -1,0 +1,50 @@
+html,
+body {
+  font-size: 20px;
+  font-family: "Roboto Condensed", sans-serif;
+  color: #333333;
+}
+
+body {
+  padding: 30px;
+  margin: 0px;
+}
+
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+/* Titel WORTSCHATZ */
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+  line-height: 1;
+}
+
+/* Button Container yeehaw */
+.button-container {
+  margin-top: 30px;
+  padding: 30px 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: turquoise;
+}
+
+.button {
+  display: flex;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.5;
+}
