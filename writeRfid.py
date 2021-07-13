@@ -18,7 +18,7 @@ def write_function():
     # GPIO.cleanup()
 
 # if __name__ == '__main__':
-write_function()
+# write_function()
 
 # try:
 #     print(lines)
