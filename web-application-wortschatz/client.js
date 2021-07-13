@@ -1,5 +1,5 @@
 // get the button element
-let button_turquoise = document.getElementById( 'button-turquise' );
+let button_turquoise = document.getElementById( 'button-turquoise' );
 
 // LED ist am Anfang aus
 let button_turquoise_state = false;
