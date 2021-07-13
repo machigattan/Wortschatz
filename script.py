@@ -15,13 +15,13 @@ def main():
 
     #return the sum to the output stream
     # print (lines)
-    text = input(lines)
+    
     print("waiting for tag")
-    reader.write(text)
+    reader.write(lines)
   
     id, text = reader.read() 
     print("Written on ", id)
-    print(text, "is the new word")
+    print(lines, "is the new word")
     # GPIO.cleanup()
 
 # def write_function():
