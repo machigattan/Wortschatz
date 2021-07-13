@@ -10,7 +10,7 @@ def main():
 
         lines = sys.stdin.readlines()
     #get our data as an array from read_in()
-    lines = read_in()
+    # lines = read_in()
 
     # Sum  of all the items in the providen array
     # total_sum_inArray = 0
