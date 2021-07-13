@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 from mfrc522 import SimpleMFRC522
+# import sys, json
 
 reader = SimpleMFRC522()
 
