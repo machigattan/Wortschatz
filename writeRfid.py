@@ -16,7 +16,7 @@ def main():
 
     #return the sum to the output stream
     print (lines) 
-      try:
+    try:
         text = lines
         print("waiting for tag")
         reader.write(text)
@@ -24,7 +24,7 @@ def main():
         id, text = reader.read() 
         print("Written on ", id)
         print(text, "is the new word")
-      finally:
+    finally:
         GPIO.cleanup()
 
 
