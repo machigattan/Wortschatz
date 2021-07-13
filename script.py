@@ -1,5 +1,5 @@
 import sys, json
-import writeRfid
+# import writeRfid
 #Read data from stdin
 def read_in():
     lines = sys.stdin.readlines()
@@ -16,4 +16,4 @@ def main():
 # Start process
 if __name__ == '__main__':
     main()
-    writeRfid.write_function()
+    # writeRfid.write_function()
