@@ -7,8 +7,8 @@ const { spawn } = require ( 'child_process' );
 //Import PythonShell module.
 // const {PythonShell} =require('python-shell');
 
-var PythonShell = require('python-shell');
-var pyshell = new PythonShell('script.py');
+let PythonShell = require('python-shell');
+let pyshell = new PythonShell('script.py');
 
 
 
