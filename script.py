@@ -16,7 +16,7 @@ def main():
         total_sum_inArray += item
 
     #return the sum to the output stream
-    print total_sum_inArray
+    print (total_sum_inArray)
 
 # Start process
 if __name__ == '__main__':
