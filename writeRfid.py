@@ -4,6 +4,12 @@ from mfrc522 import SimpleMFRC522
 
 reader = SimpleMFRC522()
 
+#Read data from stdin
+def read_in():
+    lines = sys.stdin.readlines()
+
+       return json.loads(lines)
+
 # https://pimylifeup.com/raspberry-pi-rfid-rc522/ simple script from pimylifeup that can write on tags
 
 try:
