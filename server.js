@@ -8,7 +8,7 @@ const socketIO = require( 'socket.io' );
 const { PythonShell } =require('python-shell');
 
 // let PythonShell = require('python-shell');
-let pyshell = new PythonShell('script.py');
+
 // let pyshell = new PythonShell('writeRfid.py');
 
 // pyshell.send(JSON.stringify('brianfart'));
@@ -60,11 +60,11 @@ console.log('A client disconnected')});
 //input Feld, listener für das event
 client.on('new input', (msg)=> { 
     console.log('new word: ' + msg);
-
+    let pyshell = new PythonShell('script.py');
     pyshell.send(JSON.stringify(msg));
  
 
-    
+
     pyshell.on('message', function (message) {
       // received a message sent from the Python script (a simple "print" statement)
       console.log(message);
