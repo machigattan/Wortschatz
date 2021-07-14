@@ -3,10 +3,12 @@ import sys
 new_word = sys.argv[1]
 
 def send():
-    some_list = []
-    for i in 'string':
-         some_list.append( i )
+    # some_list = []
+    # for i in 'string':
+    #      some_list.append( i )  
+    print (new_word)
     return new_word
+ 
 
 
 # for n, a in enumerate(sys.argv):
