@@ -1,4 +1,5 @@
 import sys
+import writeRfid.py
 
 new_word = sys.argv[1]
 
@@ -6,8 +7,9 @@ def send_it():
 
     print (str(new_word))
     return new_word
- 
-send_it()
+if __name__ == '__main__':
+    send_it()
+    
 
 # for n, a in enumerate(sys.argv):
 #     # print('arg {} has value {} endOfArg'.format(n, a))
