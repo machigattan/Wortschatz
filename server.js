@@ -69,7 +69,7 @@ client.on('new input', (msg)=> {
       args: [msg]
   };
   
-  PythonShell.run('testscript.py', options, function (err, results) {
+  PythonShell.run('writeRfid.py', options, function (err, results) {
       if (err) throw err;
       // results is an array consisting of messages collected during execution
       console.log('results: %j', results);
