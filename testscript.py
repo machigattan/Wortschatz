@@ -7,6 +7,7 @@ new_word = sys.argv[1]
 #     for i in 'string':
 #          some_list.append( i )
 #     return new_word
+print (new_word)
 
 for n, a in enumerate(sys.argv):
     # print('arg {} has value {} endOfArg'.format(n, a))
