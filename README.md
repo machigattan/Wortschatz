@@ -13,6 +13,8 @@ Hier ist ein Input Feld, dass einen String an ein Python Skript weitergibt. Nun 
 Ist die Karte beschrieben worden, kann man den Server (mit Strg+C) stoppen und mit dem beigelegten Skript (read-after-writeRfid.py) überprüfen, was auf der RFID-Karte steht. 
 Dieses Skript ruft man über python3 auf. Nun kann die eben beschriebene RFID-Karte wieder auf den Reader gelegt werden und die Karte wird ausgelesen. 
 
+Die IP Adresse des Raspberry Pis muss in der client.js mit der eigenen IPv4-Adresse ausgetauscht werden!
+
 <img width="473" alt="Bildschirmfoto 2021-07-14 um 23 09 45" src="https://user-images.githubusercontent.com/58940110/125693354-d58cfbf1-e691-457c-95bc-09b7cf7a5282.png">
 
 Inventarliste Wortschatz:
