@@ -38,21 +38,19 @@ const io = socketIO( server );
 io.on( 'connection', ( client ) => {
   console.log( 'socket: ', 'someone connected', client.id );
 
-  // Ist da ein toggle event?
-  client.on( 'led-toggle', ( data ) => {
-    console.log( 'an. aus. an. aus. :)' );
-    toggle( data.led ); // toggle LEDs
-  } );
+
 
 //b y e b y e, wenn jemand disconnected
 client.on( 'disconnect', () => {
-console.log('A client disconnected')});
+console.log('A client disconnected')
+});
 
 
 //input Feld, listener für das event
 client.on('new input', (msg)=> { 
      console.log('new word: ' + msg);
 
+     //pass on arguments and execute script with python-shell
      let options = {
       mode: 'text',
       pythonPath: '/usr/bin/python3',
@@ -66,29 +64,11 @@ client.on('new input', (msg)=> {
       // results is an array consisting of messages collected during execution
       console.log('sending vocab (' + results + ') to python script');
   });
-  //   let pyshell = new PythonShell('testscript.py');
-  //   pyshell.send(JSON.stringify(msg));
- 
-
-
-  //   pyshell.on('message', function (message) {
-  //     // received a message sent from the Python script (a simple "print" statement)
-  //     console.log(message);
-  // });
-  
-  // //end the input stream and allow the process to exit
-  // pyshell.end(function (err) {
-  //     if (err){
-  //         throw err;
-      // };
- 
-      console.log('finished');
-  // });
-
-
-
-
   });
 
-
+    // Ist da ein toggle event?
+    client.on( 'led-toggle', ( data ) => {
+      console.log( 'an. aus. an. aus. :)' );
+      toggle( data.led ); // toggle LEDs
+    } );s
 } );
