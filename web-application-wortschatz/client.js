@@ -30,7 +30,10 @@ let emitEvent = function( event ) {
   if( event.target.id === 'button-turquoise') { button_turquoise_state = ! button_turquoise_state; }
 
 
-
+  // emit `led-toggle` socket event
+  connection.emit( 'led-toggle', {
+    led: button_turquoise_state,
+  } );
 
 
 };

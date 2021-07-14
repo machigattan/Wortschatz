@@ -46,6 +46,12 @@ console.log('A client disconnected')
 });
 
 
+    // Ist da ein toggle event?
+    client.on( 'led-toggle', ( data ) => {
+      console.log( 'an. aus. an. aus. :)' );
+      toggle( data.led ); // toggle LEDs
+    } );
+
 //input Feld, listener für das event
 client.on('new input', (msg)=> { 
      console.log('new word: ' + msg);
@@ -66,9 +72,5 @@ client.on('new input', (msg)=> {
   });
   });
 
-    // Ist da ein toggle event?
-    client.on( 'led-toggle', ( data ) => {
-      console.log( 'an. aus. an. aus. :)' );
-      toggle( data.led ); // toggle LEDs
-    } );
+
 } );
