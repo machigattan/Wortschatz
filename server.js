@@ -1,6 +1,11 @@
 const path = require( 'path' );
 const express = require( 'express' );
 const socketIO = require( 'socket.io' );
+//const { spawn } = require ( 'child_process' );
+
+
+//Import PythonShell module.
+const { PythonShell } =require('python-shell');
 
 // LED API wird importiert
 const { toggle } = require( './led-control' );
@@ -16,6 +21,7 @@ app.get( '/', ( request, response ) => {
       'Content-Type': 'text/html',
     }
   } );
+
 } );
 
 // bli bla blub, assets werden gesendet
@@ -32,21 +38,40 @@ const io = socketIO( server );
 io.on( 'connection', ( client ) => {
   console.log( 'socket: ', 'someone connected', client.id );
 
-  // Ist da ein toggle event?
-  client.on( 'led-toggle', ( data ) => {
-    console.log( 'an. aus. an. aus. :)' );
-    toggle( data.led ); // toggle LEDs
-  } );
+     // Ist da ein toggle event?
+     client.on( 'led-toggle', ( data ) => {
+      // console.log( 'an. aus. an. aus. :)' );
+      toggle( data.led ); // toggle LEDs
+    } );
+
 
 //b y e b y e, wenn jemand disconnected
 client.on( 'disconnect', () => {
-console.log('A client disconnected')});
+console.log('A client disconnected')
+});
+
 
 
 //input Feld, listener für das event
 client.on('new input', (msg)=> { 
-    console.log('new word: ' + msg);
+     console.log('sending ' + msg  +' to python script');
+     console.log('please put your card in the box!');
+     //pass on arguments and execute script with python-shell
+     let options = {
+      mode: 'text',
+      pythonPath: '/usr/bin/python3',
+      pythonOptions: ['-u'], // get print results in real-time
+      scriptPath: './',
+      args: [msg]
+  };
+  
+  PythonShell.run('writeRfid.py', options, (err, results)=> {
+      if (err) throw err;
+      // results is an array consisting of messages collected during execution
+      console.log('this word (' + results + ') has been written on the card');
+  //  let toggle= (data)=>{
+  //   toggle( data.led ); // toggle LEDs
+  //    }
   });
-
-
+  });
 } );

@@ -36,7 +36,6 @@ let emitEvent = function( event ) {
   } );
 
 
-
 };
 //what is e exactly, what does preventDefault do?
 //https://socket.io/get-started/chat/
@@ -46,6 +45,10 @@ form.addEventListener('submit', (e)=> {
       connection.emit('new input', input.value);
       input.value = '';
     }
+  // // emit `led-toggle` socket event
+  // connection.emit( 'led-toggle', {
+  //   led: button_turquoise_state,
+  // } );
   });
 
 
