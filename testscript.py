@@ -2,12 +2,10 @@ import sys
 
 new_word = sys.argv[1]
 
-def send():
-    # some_list = []
-    # for i in 'string':
-    #      some_list.append( i )  
-    print (new_word)
-    return new_word
+def send_it():
+
+    print (str(new_word))
+    # return new_word
  
 
 

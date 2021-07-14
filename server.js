@@ -7,14 +7,6 @@ const socketIO = require( 'socket.io' );
 //Import PythonShell module.
 const { PythonShell } =require('python-shell');
 
-// let PythonShell = require('python-shell');
-
-// let pyshell = new PythonShell('writeRfid.py');
-
-// pyshell.send(JSON.stringify('brianfart'));
-
-
-
 // LED API wird importiert
 const { toggle } = require( './led-control' );
 
@@ -63,7 +55,7 @@ client.on('new input', (msg)=> {
 
      let options = {
       mode: 'text',
-      pythonPath: '/usr/bin/python',
+      pythonPath: '/usr/bin/python3',
       pythonOptions: ['-u'], // get print results in real-time
       scriptPath: './',
       args: [msg]
@@ -92,9 +84,6 @@ client.on('new input', (msg)=> {
  
       console.log('finished');
   // });
-
-
-
 
 
 
