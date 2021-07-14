@@ -7,7 +7,7 @@ def send_it():
     print (str(new_word))
     return new_word
  
-
+send_it()
 
 # for n, a in enumerate(sys.argv):
 #     # print('arg {} has value {} endOfArg'.format(n, a))
