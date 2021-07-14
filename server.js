@@ -64,14 +64,14 @@ client.on('new input', (msg)=> {
       if (err) throw err;
       // results is an array consisting of messages collected during execution
       console.log('this word (' + results + ') has been written on the card');
-          // Ist da ein toggle event?
-    client.on( 'led-toggle', ( data ) => {
+     
+  });
+  });
+
+     // Ist da ein toggle event?
+     client.on( 'led-toggle', ( data ) => {
       // console.log( 'an. aus. an. aus. :)' );
       toggle( data.led ); // toggle LEDs
     } );
-
-  });
-  });
-
 
 } );
