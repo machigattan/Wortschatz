@@ -72,7 +72,7 @@ client.on('new input', (msg)=> {
   PythonShell.run('testscript.py', options, function (err, results) {
       if (err) throw err;
       // results is an array consisting of messages collected during execution
-      console.log('results: %j', results);
+      console.log('sending vocab to python script');
   });
   //   let pyshell = new PythonShell('testscript.py');
   //   pyshell.send(JSON.stringify(msg));
