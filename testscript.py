@@ -1,8 +1,8 @@
 import sys
 
-my_name = sys.argv[1]
+new_word = sys.argv[1]
 
-
-for n, a in enumerate(sys.argv):
-    print('arg {} has value {} endOfArg'.format(n, a))
-print("Hello and welcome " + str(my_name) + "!")
+def send_it():
+    print(str(new_word))
+    return new_word
+    
