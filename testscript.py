@@ -5,7 +5,7 @@ new_word = sys.argv[1]
 
 def send_it():
 
-    # print (str(new_word))
+    print (str(new_word))
     return new_word
 if __name__ == '__main__':
     send_it()
