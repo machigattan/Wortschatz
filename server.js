@@ -70,5 +70,5 @@ client.on('new input', (msg)=> {
     client.on( 'led-toggle', ( data ) => {
       console.log( 'an. aus. an. aus. :)' );
       toggle( data.led ); // toggle LEDs
-    } );s
+    } );
 } );
