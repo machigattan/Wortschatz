@@ -16,7 +16,7 @@ def send_it():
 
 def write_function():
     # print(lines)
-    text = input(new_word)
+    text = new_word
     print("waiting for tag")
     reader.write(text)
   
