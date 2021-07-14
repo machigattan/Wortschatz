@@ -63,9 +63,9 @@ client.on('new input', (msg)=> {
 
      let options = {
       mode: 'text',
-      pythonPath: '/path/to/python/bin/python3.7',
+      pythonPath: '/usr/bin/python',
       pythonOptions: ['-u'], // get print results in real-time
-      scriptPath: 'testscript.py',
+      scriptPath: './testscript.py',
       args: [msg]
   };
   
