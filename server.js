@@ -69,9 +69,9 @@ client.on('new input', (msg)=> {
       if (err) throw err;
       // results is an array consisting of messages collected during execution
       console.log('this word (' + results + ') has been written on the card');
-   let toggle= (data)=>{
-    toggle( data.led ); // toggle LEDs
-     }
+  //  let toggle= (data)=>{
+  //   toggle( data.led ); // toggle LEDs
+  //    }
   });
   });
 } );
