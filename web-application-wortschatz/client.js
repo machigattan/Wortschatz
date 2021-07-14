@@ -45,11 +45,11 @@ form.addEventListener('submit', (e)=> {
       connection.emit('new input', input.value);
       input.value = '';
     }
-  // emit `led-toggle` socket event
-  connection.emit( 'led-toggle', {
-    led: button_turquoise_state,
-  } );
-  });
+  // // emit `led-toggle` socket event
+  // connection.emit( 'led-toggle', {
+  //   led: button_turquoise_state,
+  // } );
+  // });
 
 
 // add event listeners on button

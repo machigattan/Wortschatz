@@ -54,8 +54,8 @@ console.log('A client disconnected')
 
 //input Feld, listener für das event
 client.on('new input', (msg)=> { 
-     console.log('new word: ' + msg);
-
+     console.log('sending ' + msg  +' to python script');
+     console.log('please put your card in the box!');
      //pass on arguments and execute script with python-shell
      let options = {
       mode: 'text',
@@ -68,7 +68,7 @@ client.on('new input', (msg)=> {
   PythonShell.run('writeRfid.py', options, function (err, results) {
       if (err) throw err;
       // results is an array consisting of messages collected during execution
-      console.log('sending vocab (' + results + ') to python script');
+      console.log('this word (' + results + ') has been written on the card');
   });
   });
 

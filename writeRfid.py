@@ -12,7 +12,7 @@ new_word = sys.argv[1]
 reader = SimpleMFRC522()
 def send_it():
 
-    print (str(new_word))
+    
     return new_word
 
 
@@ -25,6 +25,7 @@ def write_function():
     reader.write(text)
   
     id, text = reader.read() 
+    print (str(new_word))
     # print("Written on ", id)
     # print(text, "is the new word")
     # GPIO.cleanup()
