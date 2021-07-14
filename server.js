@@ -38,11 +38,6 @@ const io = socketIO( server );
 io.on( 'connection', ( client ) => {
   console.log( 'socket: ', 'someone connected', client.id );
 
-    // Ist da ein toggle event?
-    client.on( 'led-toggle', ( data ) => {
-      // console.log( 'an. aus. an. aus. :)' );
-      toggle( data.led ); // toggle LEDs
-    } );
 
 
 //b y e b y e, wenn jemand disconnected
@@ -69,6 +64,12 @@ client.on('new input', (msg)=> {
       if (err) throw err;
       // results is an array consisting of messages collected during execution
       console.log('this word (' + results + ') has been written on the card');
+          // Ist da ein toggle event?
+    client.on( 'led-toggle', ( data ) => {
+      // console.log( 'an. aus. an. aus. :)' );
+      toggle( data.led ); // toggle LEDs
+    } );
+
   });
   });
 
