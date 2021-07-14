@@ -11,4 +11,3 @@ print (new_word)
 
 for n, a in enumerate(sys.argv):
     # print('arg {} has value {} endOfArg'.format(n, a))
-    print("Hello and welcome " + str(new_word) + "!")
