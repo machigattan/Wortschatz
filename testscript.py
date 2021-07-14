@@ -9,7 +9,7 @@ new_word = sys.argv[1]
 #     return new_word
 
 
-# for n, a in enumerate(sys.argv):
+for n, a in enumerate(sys.argv):
     # print('arg {} has value {} endOfArg'.format(n, a))
     print (new_word)
     # print("Hello and welcome " + str(new_word) + "!")
