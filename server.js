@@ -59,26 +59,39 @@ console.log('A client disconnected')});
 
 //input Feld, listener für das event
 client.on('new input', (msg)=> { 
-    // console.log('new word: ' + msg);
-    let pyshell = new PythonShell('script.py');
-    pyshell.send(JSON.stringify(msg));
+     console.log('new word: ' + msg);
+
+     let options = {
+      mode: 'text',
+      pythonPath: '/path/to/python/bin/python3.7',
+      pythonOptions: ['-u'], // get print results in real-time
+      scriptPath: 'testscript.py',
+      args: [msg]
+  };
+  
+  PythonShell.run('testscript.py', options, function (err, results) {
+      if (err) throw err;
+      // results is an array consisting of messages collected during execution
+      console.log('results: %j', results);
+  });
+  //   let pyshell = new PythonShell('testscript.py');
+  //   pyshell.send(JSON.stringify(msg));
  
 
 
-    pyshell.on('message', function (message) {
-      // received a message sent from the Python script (a simple "print" statement)
-      console.log(message);
-  });
+  //   pyshell.on('message', function (message) {
+  //     // received a message sent from the Python script (a simple "print" statement)
+  //     console.log(message);
+  // });
   
-  //end the input stream and allow the process to exit
-  pyshell.end(function (err) {
-      if (err){
-          throw err;
-      };
-  // let pyshell2 = new PythonShell('writeRfid.py');
-  // pyshell.
+  // //end the input stream and allow the process to exit
+  // pyshell.end(function (err) {
+  //     if (err){
+  //         throw err;
+      // };
+ 
       console.log('finished');
-  });
+  // });
 
 
 
