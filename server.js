@@ -38,6 +38,11 @@ const io = socketIO( server );
 io.on( 'connection', ( client ) => {
   console.log( 'socket: ', 'someone connected', client.id );
 
+    // Ist da ein toggle event?
+    client.on( 'led-toggle', ( data ) => {
+      // console.log( 'an. aus. an. aus. :)' );
+      toggle( data.led ); // toggle LEDs
+    } );
 
 
 //b y e b y e, wenn jemand disconnected
@@ -46,11 +51,6 @@ console.log('A client disconnected')
 });
 
 
-    // Ist da ein toggle event?
-    client.on( 'led-toggle', ( data ) => {
-      console.log( 'an. aus. an. aus. :)' );
-      toggle( data.led ); // toggle LEDs
-    } );
 
 //input Feld, listener für das event
 client.on('new input', (msg)=> { 
