@@ -1,6 +1,4 @@
 import sys
-word = sys.argv[1]
-
 import RPi.GPIO as GPIO
 from mfrc522 import SimpleMFRC522
 # from __main__ import *
@@ -11,6 +9,7 @@ reader = SimpleMFRC522()
 
 def write_function():
     # print(lines)
+    word = sys.argv[1]
     text = input(word)
     print("waiting for tag")
     reader.write(text)
