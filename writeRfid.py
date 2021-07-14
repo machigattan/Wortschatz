@@ -1,4 +1,4 @@
-GPIO.setwarnings (False)
+
 import sys
 import RPi.GPIO as GPIO
 
